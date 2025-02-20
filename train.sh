@@ -1,0 +1,2 @@
+accelerate launch --num_processes 1     --config_file deepspeed_zero2.yaml     train_sft.py     --config configs/qwen2.5_3b.yaml
+accelerate launch --num_processes 1     --config_file deepspeed_zero2.yaml     train_sft.py     --config configs/qwen2.5_3b_psychology.yaml

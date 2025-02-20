@@ -1,0 +1,60 @@
+
+# Model arguments
+model_name_or_path: outputs/Qwen2.5-3B-Distill_reproduce/checkpoint-2400
+model_revision: main
+torch_dtype: bfloat16
+attn_implementation: flash_attention_2
+
+# Data training arguments
+dataset_id_or_path: Kedreamix/psychology-10k-Deepseek-R1-zh
+dataset_splits: train  # 数据集的拆分
+sampling: 10000 # 数据集的采样数量，调整为3B的数据量
+
+# Lora 参数
+use_peft: false  # 启用LoRA
+lora_r: 16
+lora_alpha: 6
+lora_dropout: 0.1
+lora_task_type: CAUSAL_LM  # LoRA任务类型
+
+# Swanlab 训练流程记录参数
+swanlab: true # 是否开启 Swanlab 
+workspace: Kedreamix
+project: DeepSeek_Distill
+experiment_name: Qwen2.5-3B-Distill_psychology
+
+# SFT 参数
+output_dir: outputs/Qwen2.5-3B-Distill_psychology
+overwrite_output_dir: true
+bf16: true
+gradient_accumulation_steps: 8
+gradient_checkpointing: true
+gradient_checkpointing_kwargs:
+  use_reentrant: false
+
+
+max_seq_length: 4096
+num_train_epochs: 3
+# per_device_eval_batch_size: 4
+per_device_train_batch_size: 1
+dataloader_drop_last: true
+
+learning_rate: 1e-07
+warmup_ratio: 0.1
+lr_scheduler_type: cosine
+
+# 数据处理服务器
+dataset_batch_size: 5000
+dataset_num_proc: 16
+packing: false
+
+# 日志记录参数
+log_level: info  # 日志级别
+logging_strategy: steps  # 日志记录策略
+logging_steps: 1  # 日志记录步数
+save_steps: 300
+save_total_limit: 3
+seed: 42
+
+# 断点续传
+resume_from_checkpoint: false
