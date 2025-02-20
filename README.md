@@ -80,8 +80,8 @@ Xinjing-LM 在多个场景下的表现均优于基线模型，特别是在心理
 
 ### 项目成员
 
-- 邓恺俊-项目负责人 （Datawhale成员；）
-- 陈辅元-项目负责人 （Datawhale成员；数据集收集制作、模型上线）
+- 邓恺俊-项目负责人 （深圳大学；Datawhale成员；Qwen2.5-3B-Instruct 数据蒸馏微调+  心理健康蒸馏微调；Qwen2.5-1.5B-Instruct 数据蒸馏微调+  心理健康蒸馏微调）
+- 陈辅元-项目负责人 （甘肃政法大学；Datawhale成员；专业领域数据集收集、预处理；制作psychology-10k-Deepseek-R1-zh；模型上线）
 
 ### 特别鸣谢
 
